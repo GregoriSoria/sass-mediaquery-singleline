@@ -1,0 +1,46 @@
+@mixin attr($attr, $desk: false, $mobile: false, $exact: false) {
+  // Considering minimal font
+  @if (
+    $considerMinimalFont and
+      $attr ==
+      "font-size" and
+      type-of($desk) ==
+      "number" and
+      $desk <
+      $minFont
+  ) {
+    @media (max-width: #{$minFontResolution}px) {
+      #{$attr}: sz($minFont, $minFontResolution);
+    }
+  }
+
+  @if ($desk) {
+    #{$attr}: if($exact, $desk, sz($desk)); // print desk value
+  }
+
+  @if ($mobile) {
+    @media (orientation: portrait) {
+      #{$attr}: if(
+        $exact,
+        $mobile,
+        sz($mobile, $mobileSize)
+      ); // print custom value
+    }
+  }
+}
+
+@mixin mediaAttr($attr, $value, $resolution, $exact: false) {
+  @media (max-width: #{$resolution}px) {
+    #{$attr}: if($exact, $value, sz($value, $mobileSize)); // print custom value
+  }
+}
+
+@function sz($value, $resolution: $deskSize) {
+  @return if(
+    type-of($value) == "number",
+    #{$value * 100 / $resolution}vw,
+    $value
+  );
+}
+
+
