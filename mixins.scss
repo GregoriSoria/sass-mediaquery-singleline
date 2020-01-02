@@ -1,14 +1,8 @@
 @mixin attr($attr, $desk: false, $mobile: false, $exact: false) {
+  $exact: if($attr == 'font-weight', true, $exact);
+
   // Considering minimal font
-  @if (
-    $considerMinimalFont and
-      $attr ==
-      "font-size" and
-      type-of($desk) ==
-      "number" and
-      $desk <
-      $minFont
-  ) {
+  @if ($considerMinimalFont and $attr == 'font-size' and type-of($desk) == 'number' and $desk < $minFont) {
     @media (max-width: #{$minFontResolution}px) {
       #{$attr}: sz($minFont, $minFontResolution);
     }
@@ -20,11 +14,7 @@
 
   @if ($mobile) {
     @media (orientation: portrait) {
-      #{$attr}: if(
-        $exact,
-        $mobile,
-        sz($mobile, $mobileSize)
-      ); // print custom value
+      #{$attr}: if($exact, $mobile, sz($mobile, $mobileSize)); // print custom value
     }
   }
 }
@@ -36,11 +26,7 @@
 }
 
 @function sz($value, $resolution: $deskSize) {
-  @return if(
-    type-of($value) == "number",
-    #{$value * 100 / $resolution}vw,
-    $value
-  );
+  @return if(type-of($value) == 'number', #{$value * 100 / $resolution}vw, $value);
 }
 
 
