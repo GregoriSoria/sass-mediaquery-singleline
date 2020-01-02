@@ -1,5 +1,6 @@
 # sass-mediaquery-mixin
-The PERFECT AND FAST media query mixin for your development
+The PERFECT AND FAST media query mixin for your development.
+
 **Never** again use media queries!
 
 
