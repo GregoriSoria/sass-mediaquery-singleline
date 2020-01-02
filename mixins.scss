@@ -28,5 +28,3 @@
 @function sz($value, $resolution: $deskSize) {
   @return if(type-of($value) == 'number', #{$value * 100 / $resolution}vw, $value);
 }
-
-
