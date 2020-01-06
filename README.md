@@ -8,12 +8,10 @@ SASS Media queries on a single line
 
 `npm install sass-mediaquery-singleline`
 
-`bower install sass-mediaquery-singleline`
-
 
 ### How to import
 
-On your scss, add:
+On your scss (with webpack), add:
 `@import '~sass-mediaquery-singleline/main';`
 
 

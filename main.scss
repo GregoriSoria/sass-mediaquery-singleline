@@ -1,3 +1,10 @@
+$deskSize: 1920 !default;
+$mobileSize: 768 !default;
+
+$considerMinimalFont: true !default;
+  $minFont: 10 !default; // px
+  $minFontResolution: 1280 !default; // px
+
 @mixin attr($attr, $desk: false, $mobile: false, $exact: false) {
   $exact: if($attr == 'font-weight', true, $exact);
 
