@@ -1,5 +1,5 @@
 # sass-mediaquery-singleline
-SASS Media queries on a single line
+SASS Media queries on a single line.
 
 **Never** again use media queries!
 
@@ -12,8 +12,21 @@ SASS Media queries on a single line
 ### How to import
 
 On your scss (with webpack), add:
+
 `@import '~sass-mediaquery-singleline/main';`
 
+
+### Config
+
+The calc is based on `vw` metric considering the desktop width and mobile width providing by designer's layout.
+
+So, you need to change the below sass variables to your respective layout widths:
+
+```
+// default values
+$deskSize: 1920;
+$mobileSize: 768;
+```
 
 ### EXAMPLES:
 
