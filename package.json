@@ -1,6 +1,6 @@
 {
   "name": "sass-mediaquery-singleline",
-  "version": "1.0.1-0",
+  "version": "1.0.1-1",
   "description": "SASS Media queries on a single line",
   "scripts": {
     "test": "echo \"No test specified\""
