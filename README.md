@@ -13,7 +13,9 @@ SASS Media queries on a single line.
 
 On your scss (with webpack), add:
 
-`@import '~sass-mediaquery-singleline/main';`
+```scss
+@import '~sass-mediaquery-singleline/main';
+```
 
 
 ### Config
@@ -22,7 +24,7 @@ The calc is based on `vw` metric considering the desktop width and mobile width 
 
 So, you need to change the below sass variables to your respective layout widths:
 
-```
+```scss
 // default values
 $deskSize: 1920;
 $mobileSize: 768;
@@ -30,7 +32,7 @@ $mobileSize: 768;
 
 ### EXAMPLES:
 
-```
+```scss
 .an-element {
   @include attr(height, 200, 140);  // height 200(calculated) on desk and height 140(calculated) on mobile
   @include attr(display, flex, block);  // display: flex on desk and display: block on mobile
