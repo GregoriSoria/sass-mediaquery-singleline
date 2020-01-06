@@ -1,4 +1,4 @@
-# sass-mediaquery
+# sass-mediaquery-singleline
 SASS Media queries on a single line
 
 **Never** again use media queries!
@@ -6,15 +6,15 @@ SASS Media queries on a single line
 
 ### Install
 
-`npm install sass-mediaquery`
+`npm install sass-mediaquery-singleline`
 
-`bower install sass-mediaquery`
+`bower install sass-mediaquery-singleline`
 
 
 ### How to import
 
 On your scss, add:
-`@import '~sass-mediaquery';`
+`@import '~sass-mediaquery-singleline';`
 
 
 ### EXAMPLES:

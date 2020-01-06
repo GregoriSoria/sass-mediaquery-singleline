@@ -1,5 +1,5 @@
 {
-  "name": "@gregorisoria/sass-mediaquery",
+  "name": "sass-mediaquery-singleline",
   "version": "1.0.1-0",
   "description": "SASS Media queries on a single line",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GregoriSoria/sass-mediaquery.git"
+    "url": "git+https://github.com/GregoriSoria/sass-mediaquery-singleline.git"
   },
   "keywords": [
     "media",
@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GregoriSoria/sass-mediaquery/issues"
+    "url": "https://github.com/GregoriSoria/sass-mediaquery-singleline/issues"
   },
-  "homepage": "https://github.com/GregoriSoria/sass-mediaquery#readme"
+  "homepage": "https://github.com/GregoriSoria/sass-mediaquery-singleline#readme"
 }

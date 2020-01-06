@@ -1,4 +1,8 @@
-# Changes to sass-mediaquery
+# Changes to sass-mediaquery-singleline
+
+### 1.0.1-0 (January 6, 2020)
+
+* Npm publishing adjusts
 
 ### 1.0.0 (December 19, 2019)
 
