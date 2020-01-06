@@ -1,8 +1,20 @@
-# sass-mediaquery-mixin
-The PERFECT AND FAST media query mixin for your development.
+# sass-mediaquery
+SASS Media queries on a single line
 
 **Never** again use media queries!
 
+
+### Install
+
+`npm install sass-mediaquery`
+
+`bower install sass-mediaquery`
+
+
+### How to import
+
+On your scss, add:
+`@import '~sass-mediaquery';`
 
 
 ### EXAMPLES:
@@ -16,3 +28,5 @@ The PERFECT AND FAST media query mixin for your development.
   @include attr(width, 20px, 15px, true);  // 'true' to no calculated value
 }
 ```
+
+##### Tip: Use a css minifier

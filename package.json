@@ -1,0 +1,34 @@
+{
+  "name": "sass-mediaquery",
+  "version": "0.0.0",
+  "description": "SASS Media queries on a single line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregoriSoria/sass-mediaquery.git"
+  },
+  "keywords": [
+    "media",
+    "query",
+    "queries",
+    "responsive",
+    "mixins",
+    "frontend",
+    "compass",
+    "css",
+    "sass",
+    "scss",
+    "media-queries",
+    "media-query",
+    "rwd"
+  ],
+  "author": "Grégori Sória",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GregoriSoria/sass-mediaquery/issues"
+  },
+  "homepage": "https://github.com/GregoriSoria/sass-mediaquery#readme"
+}
