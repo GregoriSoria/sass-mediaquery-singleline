@@ -1,5 +1,5 @@
 {
-  "name": "sass-mediaquery",
+  "name": "@gregorisoria/sass-mediaquery",
   "version": "1.0.0",
   "description": "SASS Media queries on a single line",
   "main": "index.js",
