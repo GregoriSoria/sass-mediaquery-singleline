@@ -14,7 +14,7 @@ SASS Media queries on a single line
 ### How to import
 
 On your scss, add:
-`@import '~sass-mediaquery-singleline';`
+`@import '~sass-mediaquery-singleline/main';`
 
 
 ### EXAMPLES:
