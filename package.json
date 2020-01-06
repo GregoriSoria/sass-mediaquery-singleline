@@ -2,7 +2,6 @@
   "name": "@gregorisoria/sass-mediaquery",
   "version": "1.0.1-0",
   "description": "SASS Media queries on a single line",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified\""
   },
@@ -25,7 +24,11 @@
     "media-query",
     "rwd"
   ],
-  "author": "Grégori Sória",
+  "author": {
+    "name": "Grégori Sória",
+    "email": "gregorisoria@gmail.com",
+    "web": "http://portfolio.gssystems.com.br"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GregoriSoria/sass-mediaquery/issues"
