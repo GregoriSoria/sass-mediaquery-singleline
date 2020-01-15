@@ -44,7 +44,7 @@ $mobileSize: 768;
 }
 ```
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="gregorisoria" data-slug-hash="BayPwmW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="SASS MediaQuery SingleLine Sample">
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="gregorisoria" data-slug-hash="BayPwmW" data-pen-title="SASS MediaQuery SingleLine Sample">
   <span>See the Pen <a href="https://codepen.io/gregorisoria/pen/BayPwmW">
   SASS MediaQuery SingleLine Sample</a> by Grégori Sória (<a href="https://codepen.io/gregorisoria">@gregorisoria</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
