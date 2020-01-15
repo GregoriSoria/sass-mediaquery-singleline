@@ -20,15 +20,21 @@ $considerMinimalFont: true !default;
   }
 
   @if ($mobile) {
-    @media (orientation: portrait) {
+    @media (orientation: portrait), (max-width: 768px) {
       #{$attr}: if($exact, $mobile, sz($mobile, $mobileSize)); // print custom value
     }
   }
 }
 
-@mixin mediaAttr($attr, $value, $resolution, $exact: false) {
-  @media (max-width: #{$resolution}px) {
-    #{$attr}: if($exact, $value, sz($value, $mobileSize)); // print custom value
+@mixin mediaAttr($attr, $value, $resolution, $customMedia: false) {
+  @if ($customMedia) {
+    @media #{$customMedia} {
+      #{$attr}: $value; // print custom value
+    }
+  } @else {
+    @media (max-width: #{$resolution}px) {
+      #{$attr}: $value; // print custom value
+    }
   }
 }
 
