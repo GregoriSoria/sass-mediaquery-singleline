@@ -52,6 +52,6 @@ $mobileSize: 768;
 <!--<script async src="https://static.codepen.io/assets/embed/ei.js"></script>-->
 
 
-![CodePen](https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png)
+[![CodePen](https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png)](https://codepen.io/gregorisoria/pen/BayPwmW)
 
 ##### Tip: Use a css minifier
