@@ -1,3 +1,5 @@
+[![CodePen](https://drive.google.com/uc?id=1sCJrr039GgHRQohs8MqOf58_KpuLwQPs)](https://www.npmjs.com/package/sass-mediaquery-singleline)
+
 # sass-mediaquery-singleline
 SASS Media queries on a single line.
 
@@ -24,7 +26,7 @@ On your scss (with webpack), add:
 
 The calc is based on `vw` metric considering the desktop width and mobile width providing by designer's layout.
 
-So, you need to change the below sass variables to your respective layout widths:
+So, you **need** to change the below sass variables to your respective layout widths:
 
 ```scss
 // default values
