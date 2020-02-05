@@ -93,8 +93,8 @@ $considerMinimalFont: true !default;
 
 [![CodePen](https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png)](https://codepen.io/gregorisoria/pen/BayPwmW)
 
-### Tests
-`npm run test`
+### Dev
+`npm run dev`
 
 <br><br>
 ##### Tip: Use a css minifier

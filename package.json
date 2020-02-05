@@ -3,7 +3,8 @@
   "version": "1.0.4",
   "description": "SASS Media queries on a single line",
   "scripts": {
-    "test": "gulp tests"
+    "test": "echo \"No test specified\"",
+    "dev": "gulp tests"
   },
   "repository": {
     "type": "git",
