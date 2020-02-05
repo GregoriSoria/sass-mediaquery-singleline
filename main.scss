@@ -1,11 +1,12 @@
 $deskSize: 1920 !default;
 $mobileSize: 768 !default;
+$allExact: false !default;
 
 $considerMinimalFont: true !default;
   $minFont: 10 !default; // px
   $minFontResolution: 1280 !default; // px
 
-@mixin attr($attr, $desk: false, $mobile: false, $exact: false) {
+@mixin attr($attr, $desk: false, $mobile: false, $exact: $allExact) {
   $exact: if($attr == 'font-weight', true, $exact);
 
   // Considering minimal font
@@ -26,14 +27,14 @@ $considerMinimalFont: true !default;
   }
 }
 
-@mixin mediaAttr($attr, $value, $resolution, $customMedia: false) {
-  @if ($customMedia) {
-    @media #{$customMedia} {
-      #{$attr}: $value; // print custom value
+@mixin mediaAttr($attr, $value, $resolution, $exact: $allExact) {
+  @if (type-of($resolution)) {
+    @media (max-width: #{$resolution}px) {
+      #{$attr}: if($exact, $value, sz($value, $resolution)); // print desk value // print custom value
     }
   } @else {
-    @media (max-width: #{$resolution}px) {
-      #{$attr}: $value; // print custom value
+    @media #{$resolution} {
+      #{$attr}: if($exact, $value, sz($value, $resolution)); // print desk value // print custom value
     }
   }
 }

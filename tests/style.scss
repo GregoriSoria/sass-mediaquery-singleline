@@ -1,0 +1,27 @@
+@import '../node_modules/normalize.css/normalize.css';
+@import '../main.scss';
+
+* {
+  font-family: Barlow, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  @include attr(padding-top, 120, 220);
+  @include attr(background-color, #111, #cdcdcd);
+  height: 100vh;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+
+    h1 {
+      @include attr(font-size, 48, 30);
+      @include attr(color, #FFF, #000);
+    }
+
+    h2 {
+      @include attr(font-size, 38, 20);
+      @include attr(color, #cdcdcd, #111);
+    }
+  }
+}

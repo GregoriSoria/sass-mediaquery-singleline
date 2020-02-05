@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "SASS Media queries on a single line",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "gulp tests"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,14 @@
   "bugs": {
     "url": "https://github.com/GregoriSoria/sass-mediaquery-singleline/issues"
   },
-  "homepage": "https://github.com/GregoriSoria/sass-mediaquery-singleline#readme"
+  "homepage": "https://gregorisoria.github.io/sass-mediaquery-singleline",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "node-notifier": "^6.0.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1"
+  }
 }
