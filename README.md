@@ -18,7 +18,7 @@ SASS Media queries on a single line.
 ### Install
 
 ```bash
-npm install sass-mediaquery-singleline
+npm install sass-mediaquery-singleline --save
 ```
 
 
@@ -30,7 +30,7 @@ On your scss (with webpack), add:
 @import '~sass-mediaquery-singleline/main';
 ```
 
-### The calc is based on `vw` metric considering the desktop width and mobile width providing by designer's layout (Figma, Zeplin, PSD, etc).
+### The calc is based on `vw` metric considering the desktop width and mobile width providing by designer's layout (Figma, Zeplin, PSD, Sketch, etc).
 
 So, you **need** to change the below sass variables to your respective layout viewport widths:
 
@@ -40,10 +40,10 @@ $deskSize: 1920; // px
 $mobileSize: 768; // px
 ```
 
-### Config
+### Custom variables
 
 ```scss
-// availables variables
+// custom available variables
 $deskSize: 1920 !default; // px
 $mobileSize: 768 !default; // px
 $allExact: false !default;
@@ -75,25 +75,30 @@ $considerMinimalFont: true !default;
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you want responsible and/or calculated
     - **`desk`** (Number) [Not Required, can be `false`] The desktop resolution value *according to designer's layout*
     - **`mobile`** (Number) [Not Required, can be `false`] The mobile resolution value *according to designer's layout*
-    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if **all** your values will be exactly what you put
+    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if `desk` and `mobile` values will be exactly what you put
 
 - **`mediaAttr($attr, $value, $resolution)`** Set an attribute responsible according to defined resolution parameter
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you need responsible and/or calculated
     - **`value`** (Number) [**Required**] The resolution value that will be applied to `resolution`
     - **`resolution`** (Number[px]|CSS Media Condition) [**Required**] The resolution that the value will be applied
-    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if **all** your values will be exactly what you put
+    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if `value` will be exactly what you put
 
+<br>
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="gregorisoria" data-slug-hash="BayPwmW" data-pen-title="SASS MediaQuery SingleLine Sample">
   <span>See the Pen <a href="https://codepen.io/gregorisoria/pen/BayPwmW">
   SASS MediaQuery SingleLine Sample</a> by Grégori Sória (<a href="https://codepen.io/gregorisoria">@gregorisoria</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<!--<script async src="https://static.codepen.io/assets/embed/ei.js"></script>-->
 
 
-[![CodePen](https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png)](https://codepen.io/gregorisoria/pen/BayPwmW)
+<p align="center">
+  <a href="https://codepen.io/gregorisoria/pen/BayPwmW">
+    <img src="https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png" alt="CodePen" width="600">
+  </a>
+</p>
 
 ### Dev
+If you want to dev or **test** this mixin, run the command below
 `npm run dev`
 
 <br><br>
