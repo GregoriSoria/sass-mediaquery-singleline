@@ -6,7 +6,7 @@
 }
 
 .content {
-  @include attr(padding-top, 120, 220);
+  @include attr(padding, 120 200, 100 50);
   @include attr(background-color, #111, #cdcdcd);
   height: 100vh;
   text-align: center;

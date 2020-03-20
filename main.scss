@@ -12,17 +12,17 @@ $considerMinimalFont: true !default;
   // Considering minimal font
   @if ($considerMinimalFont and $attr == 'font-size' and type-of($desk) == 'number' and $desk < $minFont) {
     @media (max-width: #{$minFontResolution}px) {
-      #{$attr}: sz($minFont, $minFontResolution);
+      #{$attr}: szGroup($minFont, $minFontResolution);
     }
   }
 
   @if ($desk) {
-    #{$attr}: if($exact, $desk, sz($desk)); // print desk value
+    #{$attr}: if($exact, $desk, szGroup($desk)); // print desk value
   }
 
   @if ($mobile) {
     @media (orientation: portrait), (max-width: 768px) {
-      #{$attr}: if($exact, $mobile, sz($mobile, $mobileSize)); // print custom value
+      #{$attr}: if($exact, $mobile, szGroup($mobile, $mobileSize)); // print custom value
     }
   }
 }
@@ -30,15 +30,30 @@ $considerMinimalFont: true !default;
 @mixin mediaAttr($attr, $value, $resolution, $exact: $allExact) {
   @if (type-of($resolution)) {
     @media (max-width: #{$resolution}px) {
-      #{$attr}: if($exact, $value, sz($value, $resolution)); // print desk value // print custom value
+      #{$attr}: if($exact, $value, szGroup($value, $resolution)); // print desk value // print custom value
     }
   } @else {
     @media #{$resolution} {
-      #{$attr}: if($exact, $value, sz($value, $resolution)); // print desk value // print custom value
+      #{$attr}: if($exact, $value, szGroup($value, $resolution)); // print desk value // print custom value
     }
   }
 }
 
 @function sz($value, $resolution: $deskSize) {
   @return if(type-of($value) == 'number', #{$value * 100 / $resolution}vw, $value);
+}
+
+@function szGroup($args, $resolution: false) {
+  $group: '';
+
+  @each $arg in $args {
+    // $group: $group + if($resolution, szGroup($arg, $resolution), szGroup($arg)) + ' ';
+    @if ($resolution) {
+      $group: $group + sz($arg, $resolution) + ' ';
+    } @else {
+      $group: $group + sz($arg) + ' ';
+    }
+  }
+
+  @return unquote($group);
 }
