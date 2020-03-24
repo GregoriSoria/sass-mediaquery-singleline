@@ -20,7 +20,7 @@
     }
 
     h2 {
-      @include attr(font-size, 38, 20);
+      @include attr(font-size, 38px, 20px);
       @include attr(color, #cdcdcd, #111);
     }
   }

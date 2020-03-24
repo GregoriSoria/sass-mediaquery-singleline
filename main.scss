@@ -1,59 +1,77 @@
 $deskSize: 1920 !default;
 $mobileSize: 768 !default;
-$allExact: false !default;
 
 $considerMinimalFont: true !default;
   $minFont: 10 !default; // px
   $minFontResolution: 1280 !default; // px
 
-@mixin attr($attr, $desk: false, $mobile: false, $exact: $allExact) {
-  $exact: if($attr == 'font-weight', true, $exact);
-
+@mixin attr($attr, $desk: false, $mobile: false) {
   // Considering minimal font
-  @if ($considerMinimalFont and $attr == 'font-size' and type-of($desk) == 'number' and $desk < $minFont) {
+  @if ($considerMinimalFont and $attr == 'font-size' and type-of($desk) == 'number' and singleline_getUnitValue($desk) == false and $desk < $minFont) {
     @media (max-width: #{$minFontResolution}px) {
-      #{$attr}: szGroup($minFont, $minFontResolution);
+      #{$attr}: singleline_szGroup($minFont, $minFontResolution);
     }
   }
 
   @if ($desk) {
-    #{$attr}: if($exact, $desk, szGroup($desk)); // print desk value
+    #{$attr}: if($attr == 'font-weight', $desk, singleline_szGroup($desk)); // print desk value
   }
 
   @if ($mobile) {
     @media (orientation: portrait), (max-width: 768px) {
-      #{$attr}: if($exact, $mobile, szGroup($mobile, $mobileSize)); // print custom value
+      #{$attr}: if($attr == 'font-weight', $mobile, singleline_szGroup($mobile, $mobileSize)); // print mobile value
     }
   }
 }
 
-@mixin mediaAttr($attr, $value, $resolution, $exact: $allExact) {
-  @if (type-of($resolution)) {
-    @media (max-width: #{$resolution}px) {
-      #{$attr}: if($exact, $value, szGroup($value, $resolution)); // print desk value // print custom value
+@mixin mediaAttr($attr, $value, $resolution) {
+  $valueUnit: singleline_getUnitValue($value);
+  $value: if($attr == 'font-weight', $value, singleline_szGroup($value, $resolution)); // print custom value
+
+  @if (type-of($resolution) == 'number') {
+    @media (max-width: #{$resolution}) {
+      #{$attr}: $value;
     }
   } @else {
     @media #{$resolution} {
-      #{$attr}: if($exact, $value, szGroup($value, $resolution)); // print desk value // print custom value
+      #{$attr}: $value;
     }
   }
 }
 
-@function sz($value, $resolution: $deskSize) {
-  @return if(type-of($value) == 'number', #{$value * 100 / $resolution}vw, $value);
+@function singleline_sz($value, $resolution: $deskSize) {
+  @if (type-of($value) == 'number' and singleline_getUnitValue($value) == false) {
+    @return #{$value * 100 / $resolution}vw;
+  } @else {
+    @return $value;
+  }
 }
 
-@function szGroup($args, $resolution: false) {
+@function singleline_szGroup($args, $resolution: false) {
   $group: '';
 
   @each $arg in $args {
-    // $group: $group + if($resolution, szGroup($arg, $resolution), szGroup($arg)) + ' ';
     @if ($resolution) {
-      $group: $group + sz($arg, $resolution) + ' ';
+      $group: $group + singleline_sz($arg, $resolution) + ' ';
     } @else {
-      $group: $group + sz($arg) + ' ';
+      $group: $group + singleline_sz($arg) + ' ';
     }
   }
 
   @return unquote($group);
+}
+
+@function singleline_getUnitValue($value) {
+  @if (type-of($value) == 'number') {
+    $calc: $value * 0 + 1;
+    $units: ('px', '%', 'vw', 'vh', 'vmin', 'vmax', 'em', 'rem', 'pt', 'cm', 'mm', 'in', 'pc', 'ex', 'ch');
+
+    @each $unit in $units {
+      @if quote($calc) ==  1 + $unit {
+        @return $unit;
+      }
+    }
+  }
+
+  @return false;
 }

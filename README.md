@@ -46,7 +46,6 @@ $mobileSize: 768; // px
 // custom available variables
 $deskSize: 1920 !default; // px
 $mobileSize: 768 !default; // px
-$allExact: false !default;
 $considerMinimalFont: true !default;
   $minFont: 10 !default; // px
   $minFontResolution: 1280 !default; // px
@@ -54,7 +53,6 @@ $considerMinimalFont: true !default;
 
 - `deskSize` (Number) Desktop **width** defined by the designer layout
 - `mobileSize` (Number) Mobile **width** defined by the designer layout
-- `allExact` (Boolean) Defines if **all** your values will be exactly what you put
 - `considerMinimalFont` (Boolean) Defines if you want se a minimal font on tiny resolutions(`minFontResolution`)
 - `minFont` (Number) The minimal font according to defined resolution(`minFontResolution`)
 - `minFontResolution` (Number) Defines the resolution that `minFont` will be applied
@@ -66,22 +64,20 @@ $considerMinimalFont: true !default;
   @include attr(height, 200, 140);  // height 200(calculated) on desk and height 140(calculated) on mobile
   @include attr(display, flex, block);  // display: flex on desk and display: block on mobile
   @include attr(flex-direction, false, column);  // media mobile with flex-direction: column, but on desk wasn't created
-  @include mediaAttr(height, 100, 320);  // media max-width: 320px with height: 100px(calculated)
-  @include attr(width, 20px, 15px, true);  // 'true' to no calculated value
+  @include mediaAttr(height, 100, 320px);  // media max-width: 320px with height: 100(px)[calculated]
+  @include attr(width, 20px, 15px);  // values with units will be put exactly what you type
 }
 ```
 
-- **`attr($attr, $desk, $mobile, $exact)`** Set an attribute responsible equals to desktop and mobile according to designer's resolutions
+- **`attr($attr, $desk, $mobile)`** Set an attribute responsible equals to desktop and mobile according to designer's resolutions
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you want responsible and/or calculated
-    - **`desk`** (Number) [Not Required, can be `false`] The desktop resolution value *according to designer's layout*
-    - **`mobile`** (Number) [Not Required, can be `false`] The mobile resolution value *according to designer's layout*
-    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if `desk` and `mobile` values will be exactly what you put
+    - **`desk`** (Number) [Not Required, can be `false`] The desktop resolution value *according to designer's layout* or a value with unit to set an exact value
+    - **`mobile`** (Number) [Not Required, can be `false`] The mobile resolution value *according to designer's layout* or a value with unit to set an exact value
 
 - **`mediaAttr($attr, $value, $resolution)`** Set an attribute responsible according to defined resolution parameter
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you need responsible and/or calculated
-    - **`value`** (Number) [**Required**] The resolution value that will be applied to `resolution`
+    - **`value`** (Number) [**Required**] The resolution value that will be applied to `resolution` or a value with unit to set an exact value
     - **`resolution`** (Number[px]|CSS Media Condition) [**Required**] The resolution that the value will be applied
-    - **`exact`** (Boolean) [Not Required, Default `false`] Defines if `value` will be exactly what you put
 
 <br>
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="gregorisoria" data-slug-hash="BayPwmW" data-pen-title="SASS MediaQuery SingleLine Sample">
