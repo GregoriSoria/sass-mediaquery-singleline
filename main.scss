@@ -77,7 +77,7 @@ $considerMinimalFont: true !default;
 }
 
 @function singleline_testConstantAttribute($testAttr) {
-  $constantsAttributes: (font-weight, opacity);
+  $constantsAttributes: (font-weight, opacity, z-index);
 
   @each $attr in $constantsAttributes {
     @if $attr == $testAttr {
