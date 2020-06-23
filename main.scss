@@ -14,19 +14,19 @@ $considerMinimalFont: true !default;
   }
 
   @if ($desk) {
-    #{$attr}: if($attr == 'font-weight', $desk, singleline_szGroup($desk)); // print desk value
+    #{$attr}: if(singleline_testConstantAttribute($attr), $desk, singleline_szGroup($desk)); // print desk value
   }
 
   @if ($mobile) {
     @media (orientation: portrait), (max-width: 768px) {
-      #{$attr}: if($attr == 'font-weight', $mobile, singleline_szGroup($mobile, $mobileSize)); // print mobile value
+      #{$attr}: if(singleline_testConstantAttribute($attr), $mobile, singleline_szGroup($mobile, $mobileSize)); // print mobile value
     }
   }
 }
 
 @mixin mediaAttr($attr, $value, $resolution) {
   $valueUnit: singleline_getUnitValue($value);
-  $value: if($attr == 'font-weight', $value, singleline_szGroup($value, $resolution)); // print custom value
+  $value: if(singleline_testConstantAttribute($attr), $value, singleline_szGroup($value, $resolution)); // print custom value
 
   @if (type-of($resolution) == 'number') {
     @media (max-width: #{$resolution}) {
@@ -70,6 +70,18 @@ $considerMinimalFont: true !default;
       @if quote($calc) ==  1 + $unit {
         @return $unit;
       }
+    }
+  }
+
+  @return false;
+}
+
+@function singleline_testConstantAttribute($testAttr) {
+  $constantsAttributes: (font-weight, opacity);
+
+  @each $attr in $constantsAttributes {
+    @if $attr == $testAttr {
+      @return true;
     }
   }
 

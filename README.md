@@ -97,7 +97,6 @@ $considerMinimalFont: true !default;
 If you want to dev or **test** this mixin, run the command below
 `npm run dev`
 
-<br><br>
 ##### Tip: Use a css minifier
 
 ### Licence
