@@ -64,7 +64,7 @@ $considerMinimalFont: true !default;
   @include attr(height, 200, 140);  // height 200(calculated) on desk and height 140(calculated) on mobile
   @include attr(display, flex, block);  // display: flex on desk and display: block on mobile
   @include attr(flex-direction, false, column);  // media mobile with flex-direction: column, but on desk wasn't created
-  @include mediaAttr(height, 100, 320px);  // media max-width: 320px with height: 100(px)[calculated]
+  @include mediaAttr(height, 100, 320);  // media max-width: 320px with height: 100(px)[calculated]
   @include attr(width, 20px, 15px);  // values with units will be put exactly what you type
 }
 ```
@@ -77,7 +77,7 @@ $considerMinimalFont: true !default;
 - **`mediaAttr($attr, $value, $resolution)`** Set an attribute responsible according to defined resolution parameter
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you need responsible and/or calculated
     - **`value`** (Number) [**Required**] The resolution value that will be applied to `resolution` or a value with unit to set an exact value
-    - **`resolution`** (Number[px]|CSS Media Condition) [**Required**] The resolution that the value will be applied
+    - **`resolution`** (Number|CSS Media Condition) [**Required**] The resolution that the value will be applied
 
 <br>
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="gregorisoria" data-slug-hash="BayPwmW" data-pen-title="SASS MediaQuery SingleLine Sample">

@@ -29,7 +29,7 @@ $considerMinimalFont: true !default;
   $value: if(singleline_testConstantAttribute($attr), $value, singleline_szGroup($value, $resolution)); // print custom value
 
   @if (type-of($resolution) == 'number') {
-    @media (max-width: #{$resolution}) {
+    @media (max-width: #{$resolution}px) {
       #{$attr}: $value;
     }
   } @else {
