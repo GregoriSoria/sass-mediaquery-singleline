@@ -63,7 +63,7 @@ $considerMinimalFont: true !default;
 
 @function singleline_getUnitValue($value) {
   @if (type-of($value) == 'number') {
-    $calc: $value * 0 + 1;
+    $calc: inspect($value * 0 + 1);
     $units: ('px', '%', 'vw', 'vh', 'vmin', 'vmax', 'em', 'rem', 'pt', 'cm', 'mm', 'in', 'pc', 'ex', 'ch');
 
     @each $unit in $units {
