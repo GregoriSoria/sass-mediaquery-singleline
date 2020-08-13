@@ -30,29 +30,31 @@ On your scss (with webpack), add:
 @import '~sass-mediaquery-singleline/main';
 ```
 
-### The calc is based on `vw` metric considering the desktop width and mobile width providing by designer's layout (Figma, Zeplin, PSD, Sketch, etc).
+### The calc is based on `vw` metric considering the desktop width and mobile width - whatever your metric unit _(px, pt, etc)_ :D - providing by designer's layout (Figma, Zeplin, PSD, Sketch, etc).
 
 So, you **need** to change the below sass variables to your respective layout viewport widths:
 
 ```scss
 // default values
-$deskSize: 1920; // px
-$mobileSize: 768; // px
+$deskSize: 1920;
+$mobileSize: 375;
 ```
 
 ### Custom variables
 
 ```scss
 // custom available variables
-$deskSize: 1920 !default; // px
-$mobileSize: 768 !default; // px
+$deskSize: 1920 !default;
+$mobileSize: 375 !default;
+$mobileIdentifier: (orientation: portrait), (max-width: 768px) !default;
 $considerMinimalFont: true !default;
-  $minFont: 10 !default; // px
-  $minFontResolution: 1280 !default; // px
+  $minFont: 10 !default;
+  $minFontResolution: 1280 !default;
 ```
 
 - `deskSize` (Number) Desktop **width** defined by the designer layout
 - `mobileSize` (Number) Mobile **width** defined by the designer layout
+- `mobileIdentifier` (Lists) Defines @media mobile identifier to start calc with third attr() function param
 - `considerMinimalFont` (Boolean) Defines if you want se a minimal font on tiny resolutions(`minFontResolution`)
 - `minFont` (Number) The minimal font according to defined resolution(`minFontResolution`)
 - `minFontResolution` (Number) Defines the resolution that `minFont` will be applied
@@ -64,7 +66,7 @@ $considerMinimalFont: true !default;
   @include attr(height, 200, 140);  // height 200(calculated) on desk and height 140(calculated) on mobile
   @include attr(display, flex, block);  // display: flex on desk and display: block on mobile
   @include attr(flex-direction, false, column);  // media mobile with flex-direction: column, but on desk wasn't created
-  @include mediaAttr(height, 100, 320);  // media max-width: 320px with height: 100(px)[calculated]
+  @include mediaAttr(height, 100, 320);  // media max-width: 320px with height: 100[calculated]
   @include attr(width, 20px, 15px);  // values with units will be put exactly what you type
 }
 ```

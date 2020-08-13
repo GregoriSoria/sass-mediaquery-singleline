@@ -1,6 +1,9 @@
 @import '../node_modules/normalize.css/normalize.css';
 @import '../main.scss';
 
+$deskSize: 1920;
+$mobileSize: 375;
+
 * {
   font-family: Barlow, Helvetica, Arial, sans-serif;
 }
