@@ -48,9 +48,9 @@
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",
+    "minimist": "^1.2.5",
     "node-notifier": "^6.0.0",
     "node-sass": "^4.13.1",
-    "normalize.css": "^8.0.1",
-    "minimist": ">=1.2.3"
+    "normalize.css": "^8.0.1"
   }
 }
