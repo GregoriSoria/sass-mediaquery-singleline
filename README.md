@@ -46,7 +46,7 @@ $mobileSize: 375;
 // custom available variables
 $deskSize: 1920 !default;
 $mobileSize: 375 !default;
-$mobileIdentifier: (orientation: portrait), (max-width: 768px) !default;
+$mobileIdentifier: 768 !default;
 $considerMinimalFont: true !default;
   $minFont: 10 !default;
   $minFontResolution: 1280 !default;
@@ -54,7 +54,7 @@ $considerMinimalFont: true !default;
 
 - `deskSize` (Number) Desktop **width** defined by the designer layout
 - `mobileSize` (Number) Mobile **width** defined by the designer layout
-- `mobileIdentifier` (Lists) Defines @media mobile identifier to start calc with third attr() function param
+- `mobileIdentifier` (Number) Defines @media mobile identifier (max-width) to start calc with third attr() function param
 - `considerMinimalFont` (Boolean) Defines if you want se a minimal font on tiny resolutions(`minFontResolution`)
 - `minFont` (Number) The minimal font according to defined resolution(`minFontResolution`)
 - `minFontResolution` (Number) Defines the resolution that `minFont` will be applied
@@ -73,12 +73,12 @@ $considerMinimalFont: true !default;
 
 - **`attr($attr, $desk, $mobile)`** Set an attribute responsible equals to desktop and mobile according to designer's resolutions
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you want responsible and/or calculated
-    - **`desk`** (Number) [Not Required, can be `false`] The desktop resolution value *according to designer's layout* or a value with unit to set an exact value
-    - **`mobile`** (Number) [Not Required, can be `false`] The mobile resolution value *according to designer's layout* or a value with unit to set an exact value
+    - **`desk`** (CSS Value|Number) [Not Required, can be `false`] The desktop resolution value *according to designer's layout* or a value with unit to set an exact value
+    - **`mobile`** (CSS Value|Number) [Not Required, can be `false`] The mobile resolution value *according to designer's layout* or a value with unit to set an exact value
 
 - **`mediaAttr($attr, $value, $resolution)`** Set an attribute responsible according to defined resolution parameter
     - **`attr`** (CSS Attribute) [**Required**] The attribute name that you need responsible and/or calculated
-    - **`value`** (Number) [**Required**] The resolution value that will be applied to `resolution` or a value with unit to set an exact value
+    - **`value`** (CSS Value|Number) [**Required**] The resolution value that will be applied to `resolution` or a value with unit to set an exact value
     - **`resolution`** (Number|CSS Media Condition) [**Required**] The resolution that the value will be applied
 
 <br>

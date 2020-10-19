@@ -1,6 +1,6 @@
 $deskSize: 1920 !default;
 $mobileSize: 375 !default;
-$mobileIdentifier: (orientation: portrait), (max-width: 768px) !default;
+$mobileIdentifier: 768 !default;
 
 $considerMinimalFont: true !default;
   $minFont: 10 !default;
@@ -19,7 +19,7 @@ $considerMinimalFont: true !default;
   }
 
   @if ($mobile) {
-    @media #{$mobileIdentifier} {
+    @media (max-width: #{$mobileIdentifier}px) {
       #{$attr}: if(singleline_testConstantAttribute($attr), $mobile, singleline_szGroup($mobile, $mobileSize)); // print mobile value
     }
   }
