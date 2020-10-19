@@ -6,9 +6,6 @@
     "test": "echo \"No test specified\"",
     "dev": "gulp tests"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GregoriSoria/sass-mediaquery-singleline.git"
